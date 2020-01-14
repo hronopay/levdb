@@ -5,18 +5,18 @@
 #include <sys/types.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "db_impl.h"
-#include "version_set.h"
-#include "../include/leveldb/cache.h"
-#include "../include/leveldb/db.h"
-#include "../include/leveldb/env.h"
-#include "../include/leveldb/write_batch.h"
-#include "../port/port.h"
-#include "../util/crc32c.h"
-#include "../util/histogram.h"
-#include "../util/mutexlock.h"
-#include "../util/random.h"
-//#include "../util/testutil.h"
+#include "db/db_impl.h"
+#include "db/version_set.h"
+#include "leveldb/cache.h"
+#include "leveldb/db.h"
+#include "leveldb/env.h"
+#include "leveldb/write_batch.h"
+#include "port/port.h"
+#include "util/crc32c.h"
+#include "util/histogram.h"
+#include "util/mutexlock.h"
+#include "util/random.h"
+#include "util/testutil.h"
 
 // Comma-separated list of operations to run in the specified order
 //   Actual benchmarks:
@@ -923,7 +923,7 @@ class Benchmark {
 
 }  // namespace leveldb
 
-int main3(int argc, char** argv) {
+int main(int argc, char** argv) {
   FLAGS_write_buffer_size = leveldb::Options().write_buffer_size;
   FLAGS_open_files = leveldb::Options().max_open_files;
   std::string default_db_path;

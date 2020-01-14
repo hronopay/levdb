@@ -4,10 +4,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-//#include <kcpolydb.h>
-#include "../../util/histogram.h"
-#include "../../util/random.h"
-#include "../../util/testutil.h"
+#include <kcpolydb.h>
+#include "util/histogram.h"
+#include "util/random.h"
+#include "util/testutil.h"
 
 // Comma-separated list of operations to run in the specified order
 //   Actual benchmarks:
@@ -481,7 +481,7 @@ class Benchmark {
 
 }  // namespace leveldb
 
-int main323(int argc, char** argv) {
+int main(int argc, char** argv) {
   std::string default_db_path;
   for (int i = 1; i < argc; i++) {
     double d;
